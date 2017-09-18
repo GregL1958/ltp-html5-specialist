@@ -1,1 +1,1 @@
-# ltp-html5-specialist
+# Greg's HTML5 Specialist Repository
