@@ -1,0 +1,542 @@
+<! DOCTYPE html>
+<html>
+    <head>
+        <title>Lab #6</title>
+<!--
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+-->
+        
+        <style>
+            table
+            {
+                width: 100%;   
+                border: 2px solid black;   
+                border-collapse: collapse;
+            }
+            
+            p
+            {
+                font-weight: bold;
+                font-size: 1em;
+            }
+            
+        
+        </style>
+
+        
+    </head>
+    <body>
+        <form width="100%">
+            <fieldset>
+                <legend><h2>Name and DOB and Basic Questions</h2></legend>
+                    <h3>Patient Name: <input type="text"  maxlength="40"> Birth Date:  
+                        <input type="date" id="dob" /><br/>
+                    </h3>   
+                    <h3>
+                        Although dental personnel primarily treat the area in and around your mouth, your mouth is a part of your entire body. Health problems that you may have, or medication that you may be taking, could have an important interrelationship with the dentistry you will recieve. That you for answering the following questions.
+                    </h3>
+                    <h3>
+                        Are you under a physician's care now?<br/>
+                        <input type="radio" name="care" value="yes" >Yes
+                        <input type="radio" name="care" value="no" checked>No<br/>
+                        If yes please explain: <textarea maxlength="125"></textarea><br/><br/>
+                        Have you ever been hospitalized or had a major operation?<br/>
+                        <input type="radio" name="operation" value="yes" >Yes
+                        <input type="radio" name="operation" value="no" checked>No<br/>
+                        If yes please explain: <textarea maxlength="125"></textarea><br/><br/>
+                        Have you had a serious neck or head injury?<br/>
+                        <input type="radio" name="head" value="yes" >Yes
+                        <input type="radio" name="head" value="no" checked>No<br/>
+                        If yes please explain: <textarea maxlength="125"></textarea><br/><br/>
+                        Are you taking any medication pills or drugs?<br/>
+                        <input type="radio" name="med" value="yes" >Yes
+                        <input type="radio" name="med" value="no" checked>No<br/>
+                        If yes please explain: <textarea maxlength="125"></textarea><br/><br/>
+                        Do you take, or have you taken Phen-Fen or Redux?<br/>
+                        <input type="radio" name="redux" value="yes" >Yes
+                        <input type="radio" name="redux" value="no" checked>No<br/><br/>
+                        Have you taken Fosamax, Boniva, or Actonel or any other medications containing bisphosphonates?<br/>
+                        <input type="radio" name="fosamax" value="yes" >Yes
+                        <input type="radio" name="fosamax" value="no" checked>No<br/><br/>
+                        Are you on a special diet?<br/>
+                        <input type="radio" name="diet" value="yes" >Yes
+                        <input type="radio" name="diet" value="no" checked>No<br/><br/>
+                        Do you use tobacco?<br/>
+                        <input type="radio" name="tobacco" value="yes" >Yes
+                        <input type="radio" name="tobacco" value="no" checked>No<br/><br/>
+                        Do you use controlled substances?<br/>
+                        <input type="radio" name="substances" value="yes" >Yes
+                        <input type="radio" name="substances" value="no" checked>No<br/><br/>
+                    </h3>
+            </fieldset>
+            <fieldset>
+                <legend><h2>Women: Are you</h2></legend>
+                    <h3>       
+                        Pregnant/ Trying to get pregnant?<br/>
+                        <input type="radio" name="pregnant" value="yes" >Yes
+                        <input type="radio" name="pregnant" value="no" checked>No<br/><br/>
+                        Taking oral contraceptives?<br/>
+                        <input type="radio" name="contraceptives" value="yes" >Yes
+                        <input type="radio" name="contraceptives" value="no" checked>No<br/><br/>
+                        Nursing?<br/>
+                        <input type="radio" name="nursing" value="yes" >Yes
+                    <input type="radio" name="nursing" value="no" checked>No<br/><br/>
+                    </h3>       
+            </fieldset>
+            <fieldset>
+                <legend><h2>Are you allergic to any of the following?</h2></legend>
+                    <h3> 
+                        <input type="checkbox" name="medication" value="Aspirin">Aspirin
+                        <input type="checkbox" name="medication" value="Penicillin">Penicillin
+                        <input type="checkbox" name="medication" value="Local Anesthetics">Local Anesthetics
+                        <input type="checkbox" name="medication" value="Acrylic">Acrylic
+                        <input type="checkbox" name="medication" value="Metal">Metal
+                        <input type="checkbox" name="medication" value="Latex">Latex
+                        <input type="checkbox" name="medication" value="Sulfa drugs">Sulfa drugs<br/>
+                        <input type="checkbox" name="medication" value="Other">Other<br/>
+                        If other please explain: <textarea maxlength="125"></textarea><br/><br/>
+                    </h3>    
+            </fieldset>
+            <fieldset>
+                <legend><h2>Do you have, or have you had, any of the following?</h2></legend>
+                    <table  border="1"  >
+                        <tr>
+                            <td>
+                                <p>AIDS/HIV</p>
+                                <input type="radio" name="aidsHiv" value="yes" >Yes
+                                <input type="radio" name="aidsHiv" value="no" checked>No  
+                            </td>
+                            <td>
+                                <p>Cortisone Medicine</p>
+                                <input type="radio" name="cortisone" value="yes" >Yes
+                                <input type="radio" name="cortisone" value="no" checked>No
+                            </td>  
+                            <td>
+                                <p>Hemophillia</p>
+                                <input type="radio" name="hemophillia" value="yes" >Yes
+                                <input type="radio" name="hemophillia" value="no" checked>No
+                            </td>
+                            <td>
+                                <p>Radiation Treatments</p>
+                                <input type="radio" name="radiation" value="yes" >Yes
+                                <input type="radio" name="radiation" value="no" checked>No
+                            </td> 
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Alzheimer's</p>
+                                <input type="radio" name="alzheimer's" value="yes" >Yes
+                                <input type="radio" name="alzheimer's" value="no" checked>No
+                            </td>
+                            <td>
+                                <p>Diabetes</p>
+                                <input type="radio" name="diabetes" value="yes" >Yes
+                                <input type="radio" name="diabetes" value="no" checked>No
+                            </td>
+                            <td>    
+                                <p>Hepatitis A</p>
+                                <input type="radio" name="hepatitisA" value="yes" >Yes
+                                <input type="radio" name="hepatitisA" value="no" checked>No
+                            </td>  
+                            <td> 
+                                <p>Recent Weights Loss</p>
+                                <input type="radio" name="weightsloss" value="yes" >Yes
+                                <input type="radio" name="weightsloss" value="no" checked>No 
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Anaphylaxis</p>
+                                <input type="radio" name="anaphylaxis" value="yes" >Yes
+                                <input type="radio" name="anaphylaxis" value="no" checked>No
+                            </td>
+                            <td>
+                                <p>Drug Addiction</p>   
+                                <input type="radio" name="drugAddiction" value="yes" >Yes
+                                <input type="radio" name="drugAddiction" value="no" checked>No
+                            </td>
+                            <td>
+                                <p>Hepatitis B or C</p>
+                                <input type="radio" name="hepatitisBorC" value="yes" >Yes
+                                <input type="radio" name="hepatitisBorC" value="no" checked>No
+                            </td>
+                            <td>
+                                <p>Renal Dialysis</p>
+                                <input type="radio" name="renalDialysis" value="yes" >Yes
+                                <input type="radio" name="renalDialysis" value="no" checked>No
+                            </td> 
+                        </tr>            
+                        <tr>
+                            <td>
+                                <p>Anemia</p>
+                                <input type="radio" name="anemia" value="yes" >Yes
+                                <input type="radio" name="anemia" value="no" checked>No
+                            </td>
+                            <td>
+                                <p>Easily Winded</p>
+                                <input type="radio" name="easilyWinded" value="yes" >Yes
+                                <input type="radio" name="easilyWinded" value="no" checked>No
+                            </td>
+                            <td>    
+                                <p>Herpes</p>
+                                <input type="radio" name="herpes" value="yes" >Yes
+                                <input type="radio" name="herpes" value="no" checked>No
+                            </td>
+                            <td> 
+                                <p>Rheumatic Fever</p>
+                                <input type="radio" name="rheumaticFever" value="yes" >Yes
+                                <input type="radio" name="rheumaticFever" value="no" checked>No 
+                            </td>
+                        </tr>                 
+                        <tr>
+                            <td>
+                                <p>Angina</p>
+                                <input type="radio" name="angina" value="yes" >Yes
+                                <input type="radio" name="angina" value="no" checked>No
+                            </td>
+                            <td>
+                                <p>Emphysema</p>                       
+                                <input type="radio" name="emphysema" value="yes" >Yes
+                                <input type="radio" name="emphysema" value="no" checked>No
+                            </td>
+                            <td>
+                                <p>High Blood Pressure</p>
+                                 <input type="radio" name="highBloodPressure" value="yes" >Yes
+                                <input type="radio" name="highBloodPressure" value="no" checked>No
+                            </td>
+                            <td>
+                                <p>Rheumatism</p>
+                                 <input type="radio" name="rheumatism" value="yes" >Yes
+                                <input type="radio" name="rheumatism" value="no" checked>No
+                            </td> 
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Arthritis/Gout</p>
+                                <input type="radio" name="arthritisGout" value="yes" >Yes
+                                <input type="radio" name="arthritisGout" value="no" checked>No
+                            </td>
+                            <td>
+                                <p>Epilepsy or Seizures</p>
+                                <input type="radio" name="epilepsyorSeizures" value="yes" >Yes
+                                <input type="radio" name="epilepsyorSeizures" value="no" checked>No
+                            </td>
+                            <td>    
+                                <p>High Cholesterol</p>
+                                <input type="radio" name="highCholesterol" value="yes" >Yes
+                                <input type="radio" name="highCholesterol" value="no" checked>No
+                            </td>
+                            <td> 
+                                <p>Scarlet Fever</p>
+                                <input type="radio" name="scarletFever" value="yes" >Yes
+                                <input type="radio" name="scarletFever" value="no" checked>No 
+                            </td>
+                        </tr> 
+                        <tr>
+                            <td>
+                                <p>Artificial Heart Valve</p>
+                                <input type="radio" name="artificialHeartValve" value="yes" >Yes
+                                <input type="radio" name="artificialHeartValve" value="no" checked>No
+                            </td>
+                            <td>
+                                <p>Excessive Bleeding</p>
+                                <input type="radio" name="excessiveBleeding" value="yes" >Yes
+                                <input type="radio" name="excessiveBleeding" value="no" checked>No
+                            </td>
+                            <td>
+                                <p>Hives or Rash</p>
+                                <input type="radio" name="hivesOrRash" value="yes" >Yes
+                                <input type="radio" name="hivesOrRash" value="no" checked>No
+                            </td>
+                            <td>
+                                <p>Shingles</p>
+                                <input type="radio" name="shingles" value="yes" >Yes
+                                <input type="radio" name="shingles" value="no" checked>No
+                            </td> 
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Artificial Joint</p>
+                                <input type="radio" name="artificialJoint" value="yes" >Yes
+                                <input type="radio" name="artificialJoint" value="no" checked>No
+                            </td>
+                            <td>
+                                <p>Excessive Thirst</p>
+                                <input type="radio" name="excessiveThirst" value="yes" >Yes
+                                <input type="radio" name="excessiveThirst" value="no" checked>No
+                            </td>
+                            <td>    
+                                <p>Hypoglycemia</p>
+                                <input type="radio" name="hypoglycemia" value="yes" >Yes
+                                <input type="radio" name="hypoglycemia" value="no" checked>No
+                            </td>
+                            <td> 
+                               <p>Sickle Cell Disease</p>
+                                <input type="radio" name="sickleCellDisease" value="yes" >Yes
+                                <input type="radio" name="sickleCellDisease" value="no" checked>No 
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Asthma</p>
+                                <input type="radio" name="asthma" value="yes" >Yes
+                                <input type="radio" name="asthma" value="no" checked>No
+                            </td>
+                            <td>
+                                <p>Fainting Spells/Dizziness </p>                      
+                                <input type="radio" name="faintingSpellsDizziness" value="yes" >Yes
+                                <input type="radio" name="faintingSpellsDizziness" value="no" checked>No
+                            </td>
+                            <td>
+                                <p>Irreguular Heartbeat</p>
+                                <input type="radio" name="irreguularHeartbeat" value="yes" >Yes
+                                <input type="radio" name="irreguularHeartbeat" value="no" checked>No
+                            </td>
+                            <td>
+                                <p>Sinus Trouble</p>
+                                <input type="radio" name="sinusTrouble" value="yes" >Yes
+                                <input type="radio" name="sinusTrouble" value="no" checked>No
+                            </td> 
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Blood Disease</p>
+                                <input type="radio" name="bloodDisease" value="yes" >Yes
+                                <input type="radio" name="bloodDisease" value="no" checked>No
+                            </td>
+                            <td>
+                                <p>Frequent Cough</p>
+                                <input type="radio" name="frequentCough" value="yes" >Yes
+                                <input type="radio" name="frequentCough" value="no" checked>No
+                            </td>
+                            <td>    
+                                <p>Kidney Problems</p>
+                                <input type="radio" name="kidneyProblems" value="yes" >Yes
+                                <input type="radio" name="kidneyProblems" value="no" checked>No
+                            </td>
+                            <td> 
+                                <p>Spina Bifida</p>
+                                <input type="radio" name="spinaBifida" value="yes" >Yes
+                                <input type="radio" name="spinaBifida" value="no" checked>No 
+                            </td>
+                        </tr>                 
+                        <tr>
+                            <td>
+                                <p>Blood Transfussion</p>
+                                <input type="radio" name="bloodTransfussion" value="yes" >Yes
+                                <input type="radio" name="bloodTransfussion" value="no" checked>No
+                            </td>
+                            <td>
+                                <p>Frequent Diarrhea</p>                       
+                                <input type="radio" name="frequentDiarrhea " value="yes" >Yes
+                                <input type="radio" name="frequentDiarrhea " value="no" checked>No
+                            </td>
+                            <td>
+                                <p>Leukemia</p>
+                                <input type="radio" name="leukemia" value="yes" >Yes
+                                <input type="radio" name="leukemia" value="no" checked>No
+                            </td>
+                            <td>
+                                <p>Stomach/Intestinal Disease</p>
+                                <input type="radio" name="stomachIntestinalDisease" value="yes" >Yes
+                                <input type="radio" name="stomachIntestinalDisease" value="no" checked>No
+                            </td> 
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Breathing Problem</p>
+                                <input type="radio" name="breathingProblem" value="yes" >Yes
+                                <input type="radio" name="breathingProblem" value="no" checked>No
+                            </td>
+                            <td>
+                                <p>Frequent Headaches</p>
+                                <input type="radio" name="frequentHeadaches" value="yes" >Yes
+                                <input type="radio" name="frequentHeadaches" value="no" checked>No
+                            </td>
+                            <td>    
+                                <p>Liver Disease</p>
+                                <input type="radio" name="liverDisease" value="yes" >Yes
+                                <input type="radio" name="liverDisease" value="no" checked>No
+                            </td>
+                            <td> 
+                                <p>Stroke</p>
+                                <input type="radio" name="stroke" value="yes" >Yes
+                                <input type="radio" name="stroke" value="no" checked>No 
+                            </td>
+                        </tr> 
+                         <tr>
+                            <td>
+                                <p>Bruise Easily</p>
+                                <input type="radio" name="bruiseEasily" value="yes" >Yes
+                                <input type="radio" name="bruiseEasily" value="no" checked>No
+                            </td>
+                            <td>
+                                <p>Gential Herpes</p>
+                                <input type="radio" name="gentialHerpes" value="yes" >Yes
+                                <input type="radio" name="gentialHerpes" value="no" checked>No
+                            </td>
+                            <td>
+                                <p>Low Blood Pressure</p>
+                                <input type="radio" name="lowBloodPressure" value="yes" >Yes
+                                <input type="radio" name="lowBloodPressure" value="no" checked>No
+                            </td>
+                            <td>
+                                <p>Swelling of Limbs</p>
+                                <input type="radio" name="swellingOfLimbs" value="yes" >Yes
+                                <input type="radio" name="swellingOfLimbs" value="no" checked>No
+                            </td> 
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Cancer</p>
+                                <input type="radio" name="cancer" value="yes" >Yes
+                                <input type="radio" name="cancer" value="no" checked>No
+                            </td>
+                            <td>
+                                <p>Glaucoma</p>
+                                <input type="radio" name="glaucoma" value="yes" >Yes
+                                <input type="radio" name="glaucoma" value="no" checked>No
+                            </td>
+                            <td>    
+                                <p>Lung Disease</p>
+                                <input type="radio" name="lungDisease" value="yes" >Yes
+                                <input type="radio" name="lungDisease" value="no" checked>No
+                            </td>
+                            <td> 
+                               <p>Thyroid Disease</p>
+                                <input type="radio" name="thyroidDisease" value="yes" >Yes
+                                <input type="radio" name="thyroidDisease" value="no" checked>No 
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Chemotherapy</p>
+                                <input type="radio" name="chemotherapy" value="yes" >Yes
+                                <input type="radio" name="chemotherapy" value="no" checked>No
+                            </td>
+                            <td>
+                                <p>Hay Fever</p>                       
+                                <input type="radio" name="hayFever" value="yes" >Yes
+                                <input type="radio" name="hayFever" value="no" checked>No
+                            </td>
+                            <td>
+                                <p>Mitral Valve Prolapse</p>
+                                <input type="radio" name="mitralValveProlapse" value="yes" >Yes
+                                <input type="radio" name="mitralValveProlapse" value="no" checked>No
+                            </td>
+                            <td>
+                                <p>Tonsillitis</p>
+                                <input type="radio" name="tonsillitis" value="yes" >Yes
+                                <input type="radio" name="tonsillitis" value="no" checked>No
+                            </td> 
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Chest Pains</p>
+                                <input type="radio" name="chestPains" value="yes" >Yes
+                                <input type="radio" name="chestPains" value="no" checked>No
+                            </td>
+                            <td>
+                                <p>Heart Attack/Failure</p>
+                                <input type="radio" name="heartAttackFailure" value="yes" >Yes
+                                <input type="radio" name="heartAttackFailure" value="no" checked>No
+                            </td>
+                            <td>    
+                                <p>Osteoporosis</p>
+                                <input type="radio" name="osteoporosis" value="yes" >Yes
+                                <input type="radio" name="osteoporosis" value="no" checked>No
+                            </td>
+                            <td> 
+                                <p>Tuberculosis</p>
+                                <input type="radio" name="tuberculosis" value="yes" >Yes
+                                <input type="radio" name="tuberculosis" value="no" checked>No 
+                            </td>
+                        </tr>                 
+                        <tr>
+                            <td>
+                                <p>Cold Sores/Fever Blisters</p>
+                                <input type="radio" name="coldSoresFeverBlisters" value="yes" >Yes
+                                <input type="radio" name="coldSoresFeverBlisters" value="no" checked>No
+                            </td>
+                            <td>
+                                <p>Heart Murmur</p>                      
+                                <input type="radio" name="heartMurmur" value="yes" >Yes
+                                <input type="radio" name="heartMurmur" value="no" checked>No
+                            </td>
+                            <td>
+                                <p>Pain in Jaw Joints</p>
+                                <input type="radio" name="painInJawJoints" value="yes" >Yes
+                                <input type="radio" name="painInJawJoints" value="no" checked>No
+                            </td>
+                            <td>
+                                <p>Ulcers</p>
+                                <input type="radio" name="ulcers" value="yes" >Yes
+                                <input type="radio" name="ulcers" value="no" checked>No
+                            </td> 
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Congenital Heart Disorder</p>
+                                <input type="radio" name="congenitalHeartDisorder" value="yes" >Yes
+                                <input type="radio" name="congenitalHeartDisorder" value="no" checked>No
+                            </td>
+                            <td>
+                                <p>Heart Pacemaker</p>
+                                <input type="radio" name="heartPacemaker" value="yes" >Yes
+                                <input type="radio" name="heartPacemaker" value="no" checked>No
+                            </td>
+                            <td>    
+                                <p>Parathyroid Disease</p>
+                                <input type="radio" name="parathyroidDisease" value="yes" >Yes
+                                <input type="radio" name="parathyroidDisease" value="no" checked>No
+                            </td>
+                            <td> 
+                                <p>Venereal Disease</p>
+                                <input type="radio" name="venerealDisease" value="yes" >Yes
+                                <input type="radio" name="venerealDisease" value="no" checked>No 
+                            </td>
+                        </tr> 
+                        <tr>
+                            <td>
+                                <p>Convulsions</p>
+                                <input type="radio" name="convulsions" value="yes" >Yes
+                                <input type="radio" name="convulsions" value="no" checked>No
+                            </td>
+                            <td>
+                                <p>Heart Trouble/Disease</p>
+                                <input type="radio" name="heartTroubleDisease" value="yes" >Yes
+                                <input type="radio" name="heartTroubleDisease" value="no" checked>No
+                            </td>
+                            <td>    
+                                <p>Psychiatric Care</p>
+                                <input type="radio" name="psychiatricCare" value="yes" >Yes
+                                <input type="radio" name="psychiatricCare" value="no" checked>No
+                            </td>
+                            <td> 
+                                <p>Yellow Jaundice</p>
+                                <input type="radio" name="yellowJaundice" value="yes" >Yes
+                                <input type="radio" name="yellowJaundice" value="no" checked>No 
+                            </td>
+                        </tr>                         
+                    </table>   
+                    <p>Have you ever had any serious illness not listed above?</p>
+                    <input type="radio" name="yellowJaundice" value="yes" >Yes
+                    <input type="radio" name="yellowJaundice" value="no" checked>No<br/>
+                    If yes please explain: <textarea maxlength="125"></textarea><br/><br/>
+            </fieldset>
+            <h3><p>To the best of my knowledge,the questions on this form have been accurately answered.
+                   I understand that providing incorrect informatio can be dangerous tp my(or patient's)
+                   health. It is my responsibility to inform the dental office of any changes in medical
+                   status.</p>
+            
+            Enter Patien Name, Parent Name or Guardian: <input type="text"  maxlength="40"> Date:
+            <input type="date" id="today" /><br/>               
+            </h3>
+                
+        </form>
+        <br/>
+    </body>
+
+</html>
